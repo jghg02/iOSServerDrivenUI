@@ -9,12 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject private var vm = PetListViewModel()
+    @StateObject private var vm = PetListViewModel(service: LocalService())
     
     var body: some View {
         NavigationView {
             ScrollView {
-                ForEach(vm.components, id: \.uniqueId) { componet in
+                ForEach(vm.components, id: \.id) { componet in
                     componet.render()
                 }
                 .navigationTitle("Pets")

@@ -23,6 +23,11 @@ extension Screen {
                     throw NetWorkError.decodingError
                 }
                 components.append(FeaturedImageComponent(uiMolde: uiModel))
+            case .carousel:
+                guard let uiModel: Carousel = component?.data.decode() else {
+                    throw NetWorkError.decodingError
+                }
+                components.append(CarouselComponent(uiModel: uiModel))
             }
         }
         

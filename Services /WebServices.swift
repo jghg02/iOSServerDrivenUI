@@ -8,10 +8,14 @@
 import Foundation
 import NET
 
-class WebServices {
+class WebServices: NetWorkService {
     
     func load(url: String) async throws -> Screen {
+        /*
         guard let url = URL(string: url) else {
+            throw NetWorkError.invalidURL
+        }*/
+        guard let url = Constants.ScreenResources.resource(for: url) else {
             throw NetWorkError.invalidURL
         }
         

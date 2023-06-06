@@ -9,10 +9,8 @@ import Foundation
 import SwiftUI
 
 struct FeaturedImageComponent: UIComponent {
-    var uniqueId: String {
-        return ComponentType.featuredImage.rawValue
-    }
-    
+        
+    var id = UUID()
     let uiMolde: FeaturedImageUI
     
     func render() -> AnyView {
