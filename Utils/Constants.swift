@@ -11,7 +11,12 @@ struct Constants {
     
     struct ScreenResources {
         static let baseUrl = "localhost:3000"
-        static let petListing = "pet-listing"
+        static let petListing = "/pet-listing"
+        static let petDetails = "/pet-detail"
+
+        static func petDetail(petId: Int) -> String {
+            return petDetails + "/\(petId)"
+        }
         
         static func resource(for resourceName: String) -> URL? {
             
@@ -19,7 +24,7 @@ struct Constants {
             components.scheme = "http"
             components.host = "localhost"
             components.port = 3000
-            components.path = "/pet-listing"
+            components.path = resourceName
             return components.url
         }
 

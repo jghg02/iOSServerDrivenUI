@@ -28,6 +28,17 @@ extension Screen {
                     throw NetWorkError.decodingError
                 }
                 components.append(CarouselComponent(uiModel: uiModel))
+            case .textRow:
+                guard let uiModel: TextRow = component?.data.decode() else {
+                    throw NetWorkError.decodingError
+                }
+                components.append(TextRowComponent(uiModel: uiModel))
+
+            case .rating:
+                guard let uiModel: Raiting = component?.data.decode() else {
+                    throw NetWorkError.decodingError
+                }
+                components.append(RaitingComponent(uiModel: uiModel))
             }
         }
         

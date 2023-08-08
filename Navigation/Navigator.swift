@@ -29,7 +29,7 @@ class Navigator {
         switch action.destination {
         case .petDetail:
             if let payload = payload as? Item {
-                destinationView = Text("\(payload.petId)").toAnyView()
+                destinationView = PetDetailScreen(petId: payload.petId).toAnyView()
             } else {
                 destinationView = EmptyView().toAnyView()
             }

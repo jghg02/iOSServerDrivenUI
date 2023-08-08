@@ -12,10 +12,12 @@ struct Item: Decodable, Identifiable {
     let id = UUID()
     let petId: Int
     let imageUrl: URL
+    let description: String
     
     private enum CodingKeys: String, CodingKey {
         case petId
         case imageUrl
+        case description
     }
 }
 

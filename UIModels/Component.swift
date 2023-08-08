@@ -10,6 +10,8 @@ import Foundation
 enum ComponentType: String, Decodable {
     case featuredImage
     case carousel
+    case textRow
+    case rating
 }
 
 struct Component: Decodable {

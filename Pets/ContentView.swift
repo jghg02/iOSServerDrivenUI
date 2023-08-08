@@ -9,8 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject private var vm = PetListViewModel(service: LocalService())
-    
+//    @StateObject private var vm = PetListViewModel(service: LocalService())
+//    @StateObject private var vm = PetListViewModel(service: WebServices())
+    @StateObject private var vm: PetListViewModel
+
+
+    init() {
+        _vm = StateObject(wrappedValue: PetListViewModel(service: WebServices()))
+    }
+
     var body: some View {
         NavigationView {
             ScrollView {
